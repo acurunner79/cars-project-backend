@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const logger = require('morgan')
@@ -7,6 +8,7 @@ const PORT = process.env.PORT || 4000
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.urlencoded({extended:false}))
+app.use(express.json())
 
 app.get('/', (req, res) => {
     res.json({
@@ -16,6 +18,8 @@ app.get('/', (req, res) => {
 })
 
 ///// ROUTES FOR CONTROLLERS GO HERE ////////
+const carRouter = require('./controllers/carRoutes')
+app.use('/cars/', carRouter)
 
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`)

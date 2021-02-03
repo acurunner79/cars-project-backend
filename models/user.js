@@ -1,14 +1,11 @@
 const mongoose = require('../db/connection')
+const carSchema = require('./car')
 
 const Schema = mongoose.Schema
 
 const userSchema = new mongoose.Schema({
-    name:{ type: String, required: true},
-    cars: [
-        {ref: 'Car',
-         type: mongoose.Schema.Types.ObjectId
-        }
-    ]
+    name: String,
+    cars: carSchema,
 })
 
 const User = mongoose.model('User', userSchema)

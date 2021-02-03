@@ -20,11 +20,11 @@ app.use(express.json())
 // })
 
 ///// ROUTES FOR CONTROLLERS ////////
-const carRouter = require('./controllers/carRoutes')
-app.use('/cars/', carRouter)
+// const carRouter = require('./controllers/userRoutes')
+// app.use('/', carRouter)
 
 const userRouter = require('./controllers/userRoutes')
-app.use('/cars/user/', userRouter)
+app.use('/user/', userRouter)
 
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`)

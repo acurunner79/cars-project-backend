@@ -3,11 +3,12 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const carSchema = new Schema({
-    make: {type: String, required: true},
-    model: {type: String, required: true},
-    color: {type: String, required: true}
+    make: String,
+    model: String,
+    color: String,
+    img: String
 })
 
-const Car = mongoose.model('Car', carSchema)
+// const Car = mongoose.model('Car', carSchema)
 
-module.exports = Car
+module.exports = carSchema

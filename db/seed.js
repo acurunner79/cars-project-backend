@@ -15,7 +15,7 @@ Car.find({}).remove(() => {
                   car.users.push(user)
               })
             ]).then(() => {
-                car.save()
+                car.save
             })
         })
     })
